@@ -1,0 +1,121 @@
+.stop {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  padding: 22vh 5vw;
+}
+
+.stop[data-side="left"] {
+  justify-content: flex-start;
+}
+
+.stop[data-side="right"] {
+  justify-content: flex-end;
+}
+
+.stop[data-side="center"] {
+  justify-content: center;
+  padding-bottom: 18vh;
+}
+
+.card {
+  position: relative;
+  z-index: var(--z-cards);
+  width: min(560px, 44vw);
+  padding: 34px 34px 32px;
+  border: var(--stroke);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  rotate: var(--tilt, 0deg);
+}
+
+.stop[data-side="left"] .card {
+  --tilt: -0.8deg;
+}
+
+.stop[data-side="right"] .card {
+  --tilt: 0.8deg;
+}
+
+.stop[data-side="center"] .card {
+  width: min(640px, 100%);
+  text-align: center;
+}
+
+.card::before {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 110px;
+  height: 30px;
+  background: color-mix(in srgb, var(--accent) 55%, transparent);
+  content: "";
+  translate: -50% 0;
+  rotate: -3deg;
+}
+
+.kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-family: var(--font-hand);
+  font-size: 19px;
+}
+
+.stop[data-side="center"] .kicker {
+  justify-content: center;
+}
+
+.stopNumber {
+  padding: 1px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.heading {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 22px;
+  font-size: clamp(36px, 4.2vw, 54px);
+  font-weight: 700;
+}
+
+.scribble {
+  position: absolute;
+  bottom: -12px;
+  left: -2%;
+  width: 104%;
+  height: 18px;
+  overflow: visible;
+}
+
+.scribble path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+}
+
+@media (max-width: 819.98px) {
+  .stop {
+    min-height: auto;
+    padding: 170px 16px 12vh;
+  }
+
+  .card {
+    width: 100%;
+    padding: 28px 22px 24px;
+  }
+}
+
+.stop[data-side="center"] .card::before {
+  display: none;
+}

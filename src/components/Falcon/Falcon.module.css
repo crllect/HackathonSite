@@ -1,0 +1,14 @@
+.scarfTail {
+  transform-box: fill-box;
+  transform-origin: 30% 0;
+  animation: flutter 0.42s ease-in-out infinite alternate;
+}
+
+@keyframes flutter {
+  from {
+    transform: rotate(-12deg) skewY(-4deg);
+  }
+  to {
+    transform: rotate(14deg) skewY(5deg);
+  }
+}

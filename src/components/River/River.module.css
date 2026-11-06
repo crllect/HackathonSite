@@ -1,0 +1,187 @@
+.river {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-river);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  max-width: none;
+}
+
+.land {
+  fill: var(--land);
+}
+
+.grass {
+  opacity: 0.9;
+}
+
+.withPhoto .land,
+.withPhoto .grass,
+.withPhoto .water {
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+}
+
+.trail {
+  fill: none;
+  stroke: #f4e7c3;
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.shore {
+  fill: none;
+  stroke: var(--sand);
+  stroke-width: 20;
+  stroke-linejoin: round;
+}
+
+.water {
+  stroke: none;
+}
+
+.bank,
+.sketch {
+  fill: none;
+  stroke: var(--ink);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bank {
+  stroke-width: 3;
+}
+
+.sketch {
+  stroke-width: 1.4;
+  opacity: 0.45;
+}
+
+.plaque {
+  fill: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 16px;
+}
+
+.paddle,
+.glide,
+.sway,
+.shimmer,
+.oar,
+.drive,
+.train {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-delay: var(--delay, 0s);
+}
+
+.paddle {
+  animation: paddle 3.4s ease-in-out infinite;
+}
+
+.glide {
+  animation: glide 11s ease-in-out infinite;
+}
+
+.oar {
+  animation: row 1.3s ease-in-out infinite;
+}
+
+.sway {
+  animation: sway 5s ease-in-out infinite;
+}
+
+.shimmer {
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.drive {
+  animation: drive 7s linear infinite;
+}
+
+.train {
+  animation: drive 9s ease-in-out infinite alternate;
+}
+
+@keyframes paddle {
+  0%,
+  100% {
+    transform: translateY(-3px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(4deg);
+  }
+}
+
+@keyframes glide {
+  0%,
+  100% {
+    transform: translateY(-34px);
+  }
+  50% {
+    transform: translateY(34px);
+  }
+}
+
+@keyframes row {
+  0%,
+  100% {
+    transform: rotate(-16deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-8deg) translateY(-4px);
+  }
+  50% {
+    transform: rotate(8deg) translateY(4px);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateX(-4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+}
+
+@keyframes drive {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  8%,
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--span));
+  }
+}

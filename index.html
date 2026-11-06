@@ -4,39 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ec3750" />
-    <meta name="description" content="Rindge Hacks." />
-    <title>Rindge Hacks | Boston Hackathon</title>
+    <meta name="description" content="RindgeHacks: a high school hackathon on the banks of the Charles River in Cambridge, MA." />
+    <title>RindgeHacks · A high school hackathon on the Charles</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Short+Stack&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <img
-          class="hero__image"
-          src="https://upload.wikimedia.org/wikipedia/commons/e/e6/2011_Boston_Back_Bay_%26_Charles_River.jpg"
-          alt="Aerial view of Boston's Back Bay beside the Charles River, with a bridge crossing the water"
-          fetchpriority="high"
-        />
-        <div class="hero__shade" aria-hidden="true"></div>
-        <div class="hero__content">
-          <h1 id="hero-title"><span class="hero__rough">Rindge</span><span class="hero__hand">Hacks</span></h1>
-        </div>
-        <a class="scroll-cue" href="#sections" aria-label="Scroll down">↓</a>
-        <p class="photo-credit">
-          Photo: <a href="https://commons.wikimedia.org/wiki/File:2011_Boston_Back_Bay_%26_Charles_River.jpg" target="_blank" rel="noreferrer">Nicholas Hartmann / Wikimedia Commons</a>
-          · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · cropped to fit
-        </p>
-      </section>
-      <section class="section-list" id="sections" aria-label="Page sections">
-        <h2>About</h2>
-        <h2>Schedule</h2>
-        <h2>Location</h2>
-      </section>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>

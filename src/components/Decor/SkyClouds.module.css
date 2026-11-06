@@ -1,0 +1,32 @@
+.sky {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cloud,
+.shadow {
+  position: absolute;
+  width: var(--cloud-width);
+  height: auto;
+  max-width: none;
+}
+
+.cloud {
+  z-index: var(--z-sky);
+  filter: drop-shadow(0 6px 0 rgba(43, 39, 69, 0.12));
+}
+
+.shadow {
+  z-index: var(--z-river);
+  opacity: 0.16;
+  filter: blur(8px);
+  translate: 40px 90px;
+}
+
+@media (max-width: 819.98px) {
+  .cloud,
+  .shadow {
+    width: calc(var(--cloud-width) * 0.55);
+  }
+}
